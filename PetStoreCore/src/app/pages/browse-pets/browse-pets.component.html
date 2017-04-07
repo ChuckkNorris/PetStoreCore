@@ -1,4 +1,4 @@
-<md-card style.backgroundColor="red">
+﻿<md-card style.backgroundColor="red">
   <app-pet-options 
     allowAll="true"
     (change)="getPets()" 
@@ -6,7 +6,6 @@
     [(selectedBreedId)]="selectedBreedId"></app-pet-options>
     Animal:{{selectedAnimalId}} and Breed:{{selectedBreedId}}
 </md-card>
-<app-food></app-food>
 <md-card>
   <div class="flex-container" fxLayout="row" fxLayoutWrap="wrap" fxLayout.xs="column" fxLayoutAlign="center center">
     <app-pet-card *ngFor="let pet of pets"

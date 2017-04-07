@@ -27,8 +27,8 @@ var FoodComponent = (function () {
 FoodComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
         selector: 'app-food',
-        template: __webpack_require__(411),
-        styles: [__webpack_require__(402)]
+        template: __webpack_require__(414),
+        styles: [__webpack_require__(405)]
     }),
     __metadata("design:paramtypes", [])
 ], FoodComponent);
@@ -42,9 +42,9 @@ FoodComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_imgur_service__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_imgur_service__ = __webpack_require__(346);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_pet_service__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_image_service__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_image_service__ = __webpack_require__(345);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(215);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddPetComponent; });
@@ -111,8 +111,8 @@ var AddPetComponent = (function () {
 AddPetComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
         selector: 'app-add-pet',
-        template: __webpack_require__(412),
-        styles: [__webpack_require__(403)],
+        template: __webpack_require__(415),
+        styles: [__webpack_require__(406)],
         providers: [__WEBPACK_IMPORTED_MODULE_1__services_imgur_service__["a" /* ImgurService */], __WEBPACK_IMPORTED_MODULE_3__services_image_service__["a" /* ImageService */]]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_pet_service__["a" /* PetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_pet_service__["a" /* PetService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_image_service__["a" /* ImageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_image_service__["a" /* ImageService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_imgur_service__["a" /* ImgurService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_imgur_service__["a" /* ImgurService */]) === "function" && _e || Object])
@@ -150,23 +150,32 @@ var AdminComponent = (function () {
         this.breed = { animal: {} };
     }
     AdminComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._petService.getAnimals().subscribe(function (animals) { return _this.animalOptions = animals; });
-        this._petService.getBreeds().subscribe(function (breeds) { return _this.breedOptions = breeds; });
+        this.getAnimals();
+        this.getBreeds();
     };
     AdminComponent.prototype.saveAnimal = function (animalName) {
-        this._petService.saveAnimal(this.animal).subscribe();
+        var _this = this;
+        this._petService.saveAnimal(this.animal).subscribe(function () { return _this.getAnimals(); });
     };
     AdminComponent.prototype.saveBreed = function () {
-        this._petService.saveBreed(this.breed).subscribe();
+        var _this = this;
+        this._petService.saveBreed(this.breed).subscribe(function () { return _this.getBreeds(); });
+    };
+    AdminComponent.prototype.getAnimals = function () {
+        var _this = this;
+        this._petService.getAnimals().subscribe(function (animals) { return _this.animalOptions = animals; });
+    };
+    AdminComponent.prototype.getBreeds = function () {
+        var _this = this;
+        this._petService.getBreeds().subscribe(function (breeds) { return _this.breedOptions = breeds; });
     };
     return AdminComponent;
 }());
 AdminComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
         selector: 'app-admin',
-        template: __webpack_require__(413),
-        styles: [__webpack_require__(404)]
+        template: __webpack_require__(416),
+        styles: [__webpack_require__(407)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_pet_service__["a" /* PetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_pet_service__["a" /* PetService */]) === "function" && _a || Object])
 ], AdminComponent);
@@ -219,8 +228,8 @@ var BrowsePetsComponent = (function () {
 BrowsePetsComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
         selector: 'app-browse-pets',
-        template: __webpack_require__(414),
-        styles: [__webpack_require__(405)],
+        template: __webpack_require__(417),
+        styles: [__webpack_require__(408)],
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_pet_service__["a" /* PetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_pet_service__["a" /* PetService */]) === "function" && _a || Object])
 ], BrowsePetsComponent);
@@ -250,9 +259,9 @@ webpackEmptyContext.id = 277;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(349);
 
 
 
@@ -265,7 +274,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 337:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -318,7 +327,7 @@ AppRoutingModule = __decorate([
 
 /***/ }),
 
-/***/ 338:
+/***/ 341:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -348,8 +357,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(410),
-        styles: [__webpack_require__(401)]
+        template: __webpack_require__(413),
+        styles: [__webpack_require__(404)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["X" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["X" /* ChangeDetectorRef */]) === "function" && _a || Object])
 ], AppComponent);
@@ -359,28 +368,29 @@ var _a;
 
 /***/ }),
 
-/***/ 339:
+/***/ 342:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_add_pet_add_pet_component__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_browse_pets_browse_pets_component__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_flex_layout__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routing_module__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_hammerjs__ = __webpack_require__(408);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_text_color_directive__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_pet_service__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__templates_pet_card_pet_card_component__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_admin_admin_component__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__templates_pet_options_pet_options_component__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_food_food_component__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_add_pet_add_pet_component__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_browse_pets_browse_pets_component__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_material__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_flex_layout__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routing_module__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_hammerjs__ = __webpack_require__(411);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_text_color_directive__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_pet_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__templates_pet_card_pet_card_component__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_admin_admin_component__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__templates_pet_options_pet_options_component__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_food_food_component__ = __webpack_require__(216);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -405,33 +415,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__pages_add_pet_add_pet_component__["a" /* AddPetComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__pages_browse_pets_browse_pets_component__["a" /* BrowsePetsComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__directives_text_color_directive__["a" /* TextColorDirective */],
-            __WEBPACK_IMPORTED_MODULE_13__templates_pet_card_pet_card_component__["a" /* PetCardComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_admin_admin_component__["a" /* AdminComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__templates_pet_options_pet_options_component__["a" /* PetOptionsComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_food_food_component__["a" /* FoodComponent */]
+            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__pages_add_pet_add_pet_component__["a" /* AddPetComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_browse_pets_browse_pets_component__["a" /* BrowsePetsComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__directives_text_color_directive__["a" /* TextColorDirective */],
+            __WEBPACK_IMPORTED_MODULE_14__templates_pet_card_pet_card_component__["a" /* PetCardComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_admin_admin_component__["a" /* AdminComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__templates_pet_options_pet_options_component__["a" /* PetOptionsComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_food_food_component__["a" /* FoodComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["a" /* MaterialModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_8__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_9__app_routing_module__["a" /* AppRoutingModule */]
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_8__angular_material__["a" /* MaterialModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_9__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_12__services_pet_service__["a" /* PetService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_13__services_pet_service__["a" /* PetService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -439,7 +451,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 340:
+/***/ 343:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -500,7 +512,7 @@ var _a;
 
 /***/ }),
 
-/***/ 341:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -515,7 +527,7 @@ var Pet = (function () {
 
 /***/ }),
 
-/***/ 342:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -615,7 +627,7 @@ ImageService = __decorate([
 
 /***/ }),
 
-/***/ 343:
+/***/ 346:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -684,12 +696,12 @@ var _a;
 
 /***/ }),
 
-/***/ 344:
+/***/ 347:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_models__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_models__ = __webpack_require__(344);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PetCardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -742,8 +754,8 @@ __decorate([
 PetCardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
         selector: 'app-pet-card',
-        template: __webpack_require__(415),
-        styles: [__webpack_require__(406)]
+        template: __webpack_require__(418),
+        styles: [__webpack_require__(409)]
     }),
     __metadata("design:paramtypes", [])
 ], PetCardComponent);
@@ -753,7 +765,7 @@ var _a;
 
 /***/ }),
 
-/***/ 345:
+/***/ 348:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -835,8 +847,8 @@ __decorate([
 PetOptionsComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
         selector: 'app-pet-options',
-        template: __webpack_require__(416),
-        styles: [__webpack_require__(407)]
+        template: __webpack_require__(419),
+        styles: [__webpack_require__(410)]
     }),
     __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_pet_service__["a" /* PetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_pet_service__["a" /* PetService */]) === "function" && _d || Object])
 ], PetOptionsComponent);
@@ -846,7 +858,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 346:
+/***/ 349:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -863,7 +875,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 401:
+/***/ 404:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(24)();
@@ -881,60 +893,6 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 402:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(24)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 403:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(24)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 404:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(24)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 405:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -943,7 +901,7 @@ exports = module.exports = __webpack_require__(24)();
 
 
 // module
-exports.push([module.i, ".flex-container app-pet-card {\r\n    margin: 0px 0px 0px 0px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -961,7 +919,7 @@ exports = module.exports = __webpack_require__(24)();
 
 
 // module
-exports.push([module.i, "md-card {\r\n    margin: 0 16px 16px 0;\r\n    \r\n}\r\n\r\n.center {\r\n    margin: 0 auto;\r\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -989,49 +947,103 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
+/***/ 408:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(24)();
+// imports
+
+
+// module
+exports.push([module.i, ".flex-container app-pet-card {\r\n    margin: 0px 0px 0px 0px;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 409:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(24)();
+// imports
+
+
+// module
+exports.push([module.i, "md-card {\r\n    margin: 0 16px 16px 0;\r\n    \r\n}\r\n\r\n.center {\r\n    margin: 0 auto;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
 /***/ 410:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<md-toolbar color=\"accent\">\r\n      <nav md-tab-nav-bar>\r\n        <a md-tab-link routerLink=\"/browse-pets\" routerLinkActive #rla=\"routerLinkActive\" [active]=\"rlaSafe && rla.isActive\">Browse Pets</a>\r\n        <a md-tab-link routerLink=\"/sell-pet\"  routerLinkActive #rlab=\"routerLinkActive\" [active]=\"rlaSafe && rlab.isActive\">Sell Pet</a>\r\n        <a md-tab-link routerLink=\"/admin\"  routerLinkActive #rlac=\"routerLinkActive\" [active]=\"rlaSafe && rlac.isActive\">Admin</a>\r\n        <a md-tab-link routerLink=\"/food\"  routerLinkActive #rlad=\"routerLinkActive\" [active]=\"rlaSafe && rlad.isActive\">Food</a>\r\n\r\n      </nav>\r\n </md-toolbar>\r\n<div class=\"app-content\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n"
+exports = module.exports = __webpack_require__(24)();
+// imports
 
-/***/ }),
 
-/***/ 411:
-/***/ (function(module, exports) {
+// module
+exports.push([module.i, "", ""]);
 
-module.exports = "<p>\r\n  food works!\r\n</p>\r\n<p *ngFor=\"let food of foods\">{{food.name  }}</p>"
+// exports
 
-/***/ }),
 
-/***/ 412:
-/***/ (function(module, exports) {
-
-module.exports = "<md-card style=\"text-align: center;\">\r\n  <app-pet-card center=\"true\" width=\"300px\" [pet]=\"pet\"></app-pet-card>\r\n</md-card>\r\n<md-card>\r\n  <form (ngSubmit)=\"savePet(pet)\">\r\n    <md-card>\r\n      <md-input-container dividerColor=\"primary\">\r\n        <input md-input [(ngModel)]=\"pet.name\" name=\"petName\" type=\"text\" align=\"center\" placeholder=\"Pet Name\" required>\r\n          <span md-prefix>\r\n            <i class=\"material-icons\">create</i>\r\n            &nbsp;\r\n        </span>\r\n      </md-input-container>\r\n      <md-input-container dividerColor=\"primary\">\r\n        <input md-input type=\"date\" [(ngModel)]=\"pet.birthday\" name=\"petBirthday\" align=\"center\" placeholder=\"Birthday\" required>\r\n        <span md-prefix>\r\n          <i class=\"material-icons\">cake</i>\r\n          &nbsp;\r\n        </span>\r\n      </md-input-container>\r\n\r\n      <app-pet-options \r\n        [allowAll]=\"false\"\r\n        [(selectedAnimalId)]=\"selectedAnimalId\" \r\n        [(selectedBreedId)]=\"pet.breed.Id\"></app-pet-options>\r\n\r\n    </md-card>\r\n    <md-card>\r\n    <label>Image<br>\r\n      <input required type=\"file\" name=\"image\" accept=\"image/*\" (change)=\"setPetImage($event)\" align=\"center\" placeholder=\"Image\">\r\n    </label>\r\n    <button md-raised-button color=\"primary\" type=\"submit\">Submit Pet</button>\r\n    </md-card>\r\n  </form>\r\n  {{pet | json}}\r\n</md-card>\r\n\r\n"
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
 /***/ 413:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n    <h1 style=\"text-align: center\">Add Animal</h1>\r\n    <md-input-container>\r\n        <input [(ngModel)]=\"animal.name\" md-input placeholder=\"Animal Name\" />\r\n    </md-input-container>\r\n    <button md-raised-button (click)=\"saveAnimal(animalName)\" color=\"primary\">Save Animal</button>\r\n    {{animalOptions | json}}\r\n</md-card>\r\n\r\n<md-card>\r\n    <h1 style=\"text-align: center\">Add Breed</h1>\r\n    <md-select [(ngModel)]=\"breed.animal.id\">\r\n        <md-option *ngFor=\"let animal of animalOptions\" [value]=\"animal.id\">{{animal.name}}</md-option>\r\n    </md-select>\r\n    <md-input-container>\r\n        <input [(ngModel)]=\"breed.name\" md-input placeholder=\"Breed Name\" />\r\n    </md-input-container>\r\n    <button (click)=\"saveBreed(animalId, breedName)\" md-raised-button color=\"primary\">Save Animal</button>\r\n    {{breedOptions | json}}\r\n</md-card>"
+module.exports = "<md-toolbar color=\"accent\">\r\n      <nav md-tab-nav-bar>\r\n        <a md-tab-link routerLink=\"/browse-pets\" routerLinkActive #rla=\"routerLinkActive\" [active]=\"rlaSafe && rla.isActive\">Browse Pets</a>\r\n        <a md-tab-link routerLink=\"/sell-pet\"  routerLinkActive #rlab=\"routerLinkActive\" [active]=\"rlaSafe && rlab.isActive\">Sell Pet</a>\r\n        <a md-tab-link routerLink=\"/admin\"  routerLinkActive #rlac=\"routerLinkActive\" [active]=\"rlaSafe && rlac.isActive\">Admin</a>\r\n        <a md-tab-link routerLink=\"/food\"  routerLinkActive #rlad=\"routerLinkActive\" [active]=\"rlaSafe && rlad.isActive\">Food</a>\r\n\r\n      </nav>\r\n </md-toolbar>\r\n<div class=\"app-content\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ 414:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card style.backgroundColor=\"red\">\r\n  <app-pet-options \r\n    allowAll=\"true\"\r\n    (change)=\"getPets()\" \r\n    [(selectedAnimalId)]=\"selectedAnimalId\" \r\n    [(selectedBreedId)]=\"selectedBreedId\"></app-pet-options>\r\n    Animal:{{selectedAnimalId}} and Breed:{{selectedBreedId}}\r\n</md-card>\r\n<app-food></app-food>\r\n<md-card>\r\n  <div class=\"flex-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" fxLayout.xs=\"column\" fxLayoutAlign=\"center center\">\r\n    <app-pet-card *ngFor=\"let pet of pets\"\r\n      class=\"flex-item\" \r\n      fxFlex=\"15%\" fxFlex.sm=\"40%\" fxFlex.md=\"25%\" fxFlex.lg=\"20%\"\r\n      [pet]=\"pet\"></app-pet-card>\r\n  </div>\r\n</md-card>"
+module.exports = "<p>\r\n  food works!\r\n</p>\r\n<p *ngFor=\"let food of foods\">{{food.name}}</p>"
 
 /***/ }),
 
 /***/ 415:
 /***/ (function(module, exports) {
 
-module.exports = " <md-card [class.center]=\"center\" [style.width]=\"width\"  *ngIf=\"pet\">\r\n    <md-card-title *ngIf=\"pet.name\">{{pet.name}}</md-card-title>\r\n    <md-card-subtitle *ngIf=\"pet.name\">{{pet.animalType}}</md-card-subtitle>\r\n    <img *ngIf=\"pet.imageUrl || pet.image\" md-card-image style=\"height: 300px;\" alt=\"Main image\" [src]=\"pet.imageUrl || pet.image\">\r\n    <md-card-content>\r\n      <p *ngIf=\"pet.birthday\">Age: {{getAge(pet.birthday)}}</p>\r\n      <p *ngIf=\"pet.breeds\"><span *ngFor=\"let breed of pet.breeds\">{{breed.name}}, </span></p>\r\n    </md-card-content>\r\n    <md-card-actions>\r\n      <button md-button>Adopt</button>\r\n      <button md-button>Details</button>\r\n    </md-card-actions>\r\n  </md-card>"
+module.exports = "<md-card style=\"text-align: center;\">\r\n  <app-pet-card center=\"true\" width=\"300px\" [pet]=\"pet\"></app-pet-card>\r\n</md-card>\r\n<md-card>\r\n  <form (ngSubmit)=\"savePet(pet)\">\r\n    <md-card>\r\n      <md-input-container dividerColor=\"primary\">\r\n        <input mdInput [(ngModel)]=\"pet.name\" name=\"petName\" type=\"text\" align=\"center\" placeholder=\"Pet Name\" required>\r\n          <span md-prefix>\r\n            <i class=\"material-icons\">create</i>\r\n            &nbsp;\r\n        </span>\r\n      </md-input-container>\r\n      <md-input-container dividerColor=\"primary\">\r\n        <input mdInput type=\"date\" [(ngModel)]=\"pet.birthday\" name=\"petBirthday\" align=\"center\" placeholder=\"Birthday\" required>\r\n        <span md-prefix>\r\n          <i class=\"material-icons\">cake</i>\r\n          &nbsp;\r\n        </span>\r\n      </md-input-container>\r\n\r\n      <app-pet-options \r\n        [allowAll]=\"false\"\r\n        [(selectedAnimalId)]=\"selectedAnimalId\" \r\n        [(selectedBreedId)]=\"pet.breed.Id\"></app-pet-options>\r\n\r\n    </md-card>\r\n    <md-card>\r\n    <label>Image<br>\r\n      <input required type=\"file\" name=\"image\" accept=\"image/*\" (change)=\"setPetImage($event)\" align=\"center\" placeholder=\"Image\">\r\n    </label>\r\n    <button md-raised-button color=\"primary\" type=\"submit\">Submit Pet</button>\r\n    </md-card>\r\n  </form>\r\n  {{pet | json}}\r\n</md-card>\r\n\r\n"
 
 /***/ }),
 
 /***/ 416:
+/***/ (function(module, exports) {
+
+module.exports = "<md-card>\r\n    <h1 style=\"text-align: center\">Add Animal</h1>\r\n    <md-input-container>\r\n        <input [(ngModel)]=\"animal.name\" mdInput placeholder=\"Animal Name\" />\r\n    </md-input-container>\r\n    <button md-raised-button (click)=\"saveAnimal(animalName)\" color=\"primary\">Save Animal</button>\r\n  <br />\r\n    {{animalOptions | json}}\r\n</md-card>\r\n\r\n<md-card>\r\n    <h1 style=\"text-align: center\">Add Breed</h1>\r\n    <md-select [(ngModel)]=\"breed.animal.id\">\r\n        <md-option *ngFor=\"let animal of animalOptions\" [value]=\"animal.id\">{{animal.name}}</md-option>\r\n    </md-select>\r\n    <md-input-container>\r\n        <input [(ngModel)]=\"breed.name\" mdInput placeholder=\"Breed Name\" />\r\n    </md-input-container>\r\n    <button (click)=\"saveBreed(animalId, breedName)\" md-raised-button color=\"primary\">Save Animal</button>\r\n  <br />\r\n    {{breedOptions | json}}\r\n</md-card>"
+
+/***/ }),
+
+/***/ 417:
+/***/ (function(module, exports) {
+
+module.exports = "<md-card style.backgroundColor=\"red\">\r\n  <app-pet-options \r\n    allowAll=\"true\"\r\n    (change)=\"getPets()\" \r\n    [(selectedAnimalId)]=\"selectedAnimalId\" \r\n    [(selectedBreedId)]=\"selectedBreedId\"></app-pet-options>\r\n    Animal:{{selectedAnimalId}} and Breed:{{selectedBreedId}}\r\n</md-card>\r\n<md-card>\r\n  <div class=\"flex-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" fxLayout.xs=\"column\" fxLayoutAlign=\"center center\">\r\n    <app-pet-card *ngFor=\"let pet of pets\"\r\n      class=\"flex-item\" \r\n      fxFlex=\"15%\" fxFlex.sm=\"40%\" fxFlex.md=\"25%\" fxFlex.lg=\"20%\"\r\n      [pet]=\"pet\"></app-pet-card>\r\n  </div>\r\n</md-card>"
+
+/***/ }),
+
+/***/ 418:
+/***/ (function(module, exports) {
+
+module.exports = " <md-card [class.center]=\"center\" [style.width]=\"width\"  *ngIf=\"pet\">\r\n    <md-card-title *ngIf=\"pet.name\">{{pet.name}}</md-card-title>\r\n    <md-card-subtitle *ngIf=\"pet.name\">{{pet.animalType}}</md-card-subtitle>\r\n    <img *ngIf=\"pet.imageUrl || pet.image\" md-card-image style=\"height: 300px;\" alt=\"Main image\" [src]=\"pet.imageUrl || pet.image\">\r\n    <md-card-content>\r\n      <p *ngIf=\"pet.birthday\">Age: {{getAge(pet.birthday)}}</p>\r\n      <p *ngIf=\"pet.breeds\"><span *ngFor=\"let breed of pet.breeds\">{{breed.name}}, </span></p>\r\n    </md-card-content>\r\n    <md-card-actions>\r\n      <button md-button>Adopt</button>\r\n      <button md-button>Details</button>\r\n    </md-card-actions>\r\n  </md-card>"
+
+/***/ }),
+
+/***/ 419:
 /***/ (function(module, exports) {
 
 module.exports = "<md-select placeholder=\"Animal\" (onClose)=\"onAnimalChanged()\" [(ngModel)]=\"selectedAnimalId\" name=\"animalId\" required=\"true\">\r\n  <md-option *ngIf=\"allowAll\">All</md-option>\r\n  <md-option *ngFor=\"let animal of animalOptions\" [value]=\"animal.id\">{{animal.name}}</md-option>\r\n</md-select>\r\n\r\n<md-select required=\"true\" placeholder=\"Breed\" (onClose)=\"onBreedChanged()\" [(ngModel)]=\"selectedBreedId\" name=\"breedId\">\r\n  <md-option *ngIf=\"allowAll\">All</md-option>\r\n  <md-option *ngFor=\"let breed of breedOptions\" [value]=\"breed.id\">{{breed.name}}</md-option>\r\n</md-select>"
@@ -1062,7 +1074,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PetService = (function () {
     function PetService(_http) {
         this._http = _http;
-        this.hostUrl = 'http://localhost:5000/api/';
+        this.hostUrl = '/api/';
     }
     PetService.prototype.getAnimals = function () {
         return this.getRequest('animals');
@@ -1132,7 +1144,7 @@ var _a;
 
 /***/ }),
 
-/***/ 667:
+/***/ 670:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(278);
@@ -1140,5 +1152,5 @@ module.exports = __webpack_require__(278);
 
 /***/ })
 
-},[667]);
+},[670]);
 //# sourceMappingURL=main.bundle.js.map

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { Http, RequestOptionsArgs, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Breed, Animal, Pet } from '../models/models';
@@ -7,7 +7,7 @@ import { Breed, Animal, Pet } from '../models/models';
 export class PetService {
 
   constructor(private _http: Http) { }
-  private hostUrl: string = 'http://localhost:5000/api/';
+  private hostUrl: string = '/api/';
 
    public getAnimals() : Observable<Animal[]> {
     return this.getRequest<Animal[]>('animals');

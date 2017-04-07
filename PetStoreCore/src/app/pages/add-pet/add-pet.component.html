@@ -1,18 +1,18 @@
-<md-card style="text-align: center;">
+﻿<md-card style="text-align: center;">
   <app-pet-card center="true" width="300px" [pet]="pet"></app-pet-card>
 </md-card>
 <md-card>
   <form (ngSubmit)="savePet(pet)">
     <md-card>
       <md-input-container dividerColor="primary">
-        <input md-input [(ngModel)]="pet.name" name="petName" type="text" align="center" placeholder="Pet Name" required>
+        <input mdInput [(ngModel)]="pet.name" name="petName" type="text" align="center" placeholder="Pet Name" required>
           <span md-prefix>
             <i class="material-icons">create</i>
             &nbsp;
         </span>
       </md-input-container>
       <md-input-container dividerColor="primary">
-        <input md-input type="date" [(ngModel)]="pet.birthday" name="petBirthday" align="center" placeholder="Birthday" required>
+        <input mdInput type="date" [(ngModel)]="pet.birthday" name="petBirthday" align="center" placeholder="Birthday" required>
         <span md-prefix>
           <i class="material-icons">cake</i>
           &nbsp;
