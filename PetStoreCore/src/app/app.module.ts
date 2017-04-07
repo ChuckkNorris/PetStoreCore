@@ -19,6 +19,7 @@ import { PetCardComponent } from './templates/pet-card/pet-card.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { PetOptionsComponent } from './templates/pet-options/pet-options.component';
 import { FoodComponent } from './components/food/food.component';
+import { PetDetailsComponent } from './pages/pet-details/pet-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FoodComponent } from './components/food/food.component';
     PetCardComponent,
     AdminComponent,
     PetOptionsComponent,
-    FoodComponent
+    FoodComponent,
+    PetDetailsComponent
   ],
   imports: [
     BrowserModule,

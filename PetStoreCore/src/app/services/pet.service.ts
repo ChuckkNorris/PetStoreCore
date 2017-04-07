@@ -18,6 +18,13 @@ export class PetService {
     if (animalId)
       queryString += 'animalId=' + animalId;
     return this.getRequest<Breed[]>('breeds', queryString);
+   }
+
+  public getPet(petId: number): Observable<Pet> {
+      return Observable.create(obs => {
+          this._http.put('/api/pets?petId=' + petId, {}).subscribe(x => obs.next(x.json() as Pet));
+      });
+      
   }
 
   public getPets(animalId?: number, breedId?: number) : Observable<Pet[]> {

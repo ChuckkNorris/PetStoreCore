@@ -16,8 +16,8 @@ namespace PetStoreCore
 {
     public class Startup
     {
-    private const string DB_USERNAME = "username_here";
-    private const string DB_PASSWORD = "passsword_here";
+    private const string DB_USERNAME = "commander";
+    private const string DB_PASSWORD = "Cobra1234";
     private static readonly string PET_DB_CONNECTION_STRING = $"Server=tcp:chucknorrisdev.database.windows.net,1433;Initial Catalog=petstoredb;Persist Security Info=False;User ID={DB_USERNAME};Password={DB_PASSWORD};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
     public void ConfigureServices(IServiceCollection services) {
           services.AddMvc();

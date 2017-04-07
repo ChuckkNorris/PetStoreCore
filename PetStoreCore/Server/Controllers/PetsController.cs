@@ -27,6 +27,11 @@ namespace PetStoreCore.Server.Controllers {
             return toReturn;
         }
 
+        [HttpPut]
+        public Pet GetPet(long petId) {
+          return _petService.GetPet(petId);
+        }
+
         
         [HttpPost]
         public void Post([FromBody]Pet pet) {

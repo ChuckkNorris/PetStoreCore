@@ -21,6 +21,13 @@ namespace PetStoreCore.Server.Services
             _petContext.SaveChanges();
         }
 
+        public Pet GetPet(long id) {
+          Pet myPet = _petContext.Pets
+              .Include(pet => pet.Breed)
+              .ThenInclude(breed => breed.Animal).FirstOrDefault(p => p.Id == id);
+              return myPet;
+    }
+
         public IEnumerable<Pet> GetPets(Func<Pet, bool> petQuery = null) {
             IEnumerable<Pet> toReturn = null;
             IQueryable<Pet> petsInclude = _petContext.Pets

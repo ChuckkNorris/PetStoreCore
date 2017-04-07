@@ -1,6 +1,6 @@
 webpackJsonp([2,4],{
 
-/***/ 24:
+/***/ 21:
 /***/ (function(module, exports) {
 
 /*
@@ -63,10 +63,10 @@ module.exports = function() {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(403);
+var content = __webpack_require__(404);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(668)(content, {});
+var update = __webpack_require__(671)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -84,10 +84,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 402:
+/***/ 403:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(24)();
+exports = module.exports = __webpack_require__(21)();
 // imports
 
 
@@ -99,22 +99,22 @@ exports.push([module.i, ".mat-elevation-z0{box-shadow:0 0 0 0 rgba(0,0,0,.2),0 0
 
 /***/ }),
 
-/***/ 403:
+/***/ 404:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(24)();
+exports = module.exports = __webpack_require__(21)();
 // imports
-exports.i(__webpack_require__(402), "");
+exports.i(__webpack_require__(403), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody { \r\n  margin: 0;\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 668:
+/***/ 671:
 /***/ (function(module, exports) {
 
 /*
@@ -367,7 +367,7 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 672:
+/***/ 675:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(280);
@@ -375,5 +375,5 @@ module.exports = __webpack_require__(280);
 
 /***/ })
 
-},[672]);
+},[675]);
 //# sourceMappingURL=styles.bundle.js.map
